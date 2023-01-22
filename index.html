@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>The time I lost my miknd</title>
+<link rel="stylesheet" type="text/css" href="C81style.css">
+</head>
+<body class="body_backgorund">
+
+	<center>
+		<h1>This is done on Visual studio code</h1>
+		<canvas id=c1 width=400 height="200"></canvas>
+		<script>
+			ctx = c1.getContext('2d')
+			ctx.fillStyle = '#7ef' // draw blue background with the darker frame
+			ctx.fillRect(0, 0, 400, 400)
+			ctx.fillStyle = '#9ff'
+			ctx.fillRect(10, 10, 400-20, 400-20)
+		
+			var X = 75, W = 50, G = 20
+			ctx.lineWidth = 10
+			var colors = ['blue', 'black', 'red', 'yellow', 'green']
+			var args = [
+				[X,X,W],
+				[X+W+W+G,X,W],
+				[X+W+W+G+W+W+G,X,W],
+				[X+W+G/2,X+W,W],
+				[X+W+G/2+W+W+G,X+W,W]]
+		
+			while (colors.length > 0) {
+				ctx.strokeStyle = colors.shift()
+				ctx.beginPath()
+				ctx.arc.apply(ctx, args.shift().concat([0,Math.PI*2,true]))
+				ctx.stroke()
+			}
+		</script>
+
+
+<script src="C81main.js"></script>
+</body>
+</html>
